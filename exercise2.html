@@ -107,7 +107,8 @@
             
             /*------------------------------------------------------------*/
             /* TODO: Add support for more drawing tools. */
-            
+        
+
             if ( Math.abs(x-prevX) + Math.abs(y-prevY) < 3 ) {
                 return;  // don't draw squares too close together
             }
@@ -284,7 +285,15 @@
         <option value="4">Yellow</option>
 
     </select>
+
 </p>
+<p><b>Wybierz narzędzie:</b>
+    <select id="shapeChoice">
+        <option value="0">Kwadrat</option>
+        <option value="1">Plusik</option>
+    
+    </select>
+    </p>
 <div id="middle">
 <p><button type="button" id="Clear" onclick="Clear_1()"> Wyczyść obszar rysowania</button></p></div>
 <div id="canvasholder">
