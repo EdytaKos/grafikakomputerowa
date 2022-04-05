@@ -64,7 +64,7 @@ public class Lab5 extends GLJPanel implements GLEventListener, KeyListener{
      */
     private void draw(GL2 gl2) {
 
-        gl2.glRotatef(rotateZ,0,0,1);   // Apply rotations to complete object.
+        gl2.glRotatef(rotateZ,1,1,1);   // Apply rotations to complete object.
         gl2.glRotatef(rotateY,0,1,0);
         gl2.glRotatef(rotateX,1,0,0);
 
@@ -84,15 +84,21 @@ public class Lab5 extends GLJPanel implements GLEventListener, KeyListener{
     }
 
     private void korkociag(GL2 gl2) {
-        gl2.glColor3f(5,3,2);
-        for (int i =0; i<140; i++)
+        gl2.glColor3f(0,0,1);
+        gl2.glBegin(GL2.GL_LINE_STRIP);
+        double z,y;
+        var angle=2*Math.PI /46;
+
+        for(float i=1;i<=8*36;i++)
         {
-            gl2.glPointSize(1+i/8);
-            gl2.glBegin(GL_POINTS);
-            gl2.glVertex3f(	(float)(2 * Math.cos(i * 2 * Math.PI / 20)),
-                    (float)(2 * Math.sin(i * 2 * Math.PI / 20)),0.05f * i);
-            gl2.glEnd();
+            z=Math.cos(angle*i);
+            y=Math.sin(angle*i);
+            gl2.glVertex3d(i/36,y*0.01*i,z*0.01*i);
+
         }
+
+        gl2.glEnd();
+
     }
 
     private void trojkat(float j, float k, float n, GL2 gl2)
